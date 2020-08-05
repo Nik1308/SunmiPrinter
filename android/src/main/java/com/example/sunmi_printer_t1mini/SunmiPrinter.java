@@ -32,6 +32,10 @@ public class SunmiPrinter{
     Aidl.getInstance().sendRawData(ESCUtil.boldOff());
   }
 
+  public void emptyLines(int n) {
+    Aidl.getInstance().lineWrap(n);
+  }
+
 
   public void text(String text, int align, boolean bold,  int size){
 

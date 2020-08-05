@@ -16,10 +16,16 @@ class MyApp extends StatefulWidget {
 class _MyAppState extends State<MyApp> {
 
   void _print() async{
-    Printer.text("Contact No.: 7665651403",styles: PrintStyle(bold: true,align: PrintAlign.center,size: PrintSize.md));
-    Printer.text("nikhil",styles: PrintStyle(align: PrintAlign.left,size: PrintSize.lg));
-    Printer.text("nikhil",styles: PrintStyle(align: PrintAlign.right,size: PrintSize.md));
-    Printer.text("nikhil");
+    Printer.text("Contact No.: 0123456789",styles: PrintStyle(bold: true,align: PrintAlign.center,size: PrintSize.md));
+    Printer.emptyLines(3);
+    Printer.hr();
+    Printer.text("Nikhil",styles: PrintStyle(align: PrintAlign.left,size: PrintSize.lg));
+    Printer.hr();
+    Printer.text("Nikhil",styles: PrintStyle(align: PrintAlign.right,size: PrintSize.md));
+    Printer.hr();
+    Printer.text("Nikhil");
+    Printer.emptyLines(5);
+    Printer.hr();
   }
 
   @override

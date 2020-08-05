@@ -14,6 +14,7 @@ public class SunmiPrinterT1miniPlugin implements FlutterPlugin, MethodCallHandle
   private static SunmiPrinter sunmiPrinter;
 
   private String TEXT = "printText";
+  private String EMPTY_LINES = "emptyLines";
 
 
   @Override
@@ -40,6 +41,10 @@ public class SunmiPrinterT1miniPlugin implements FlutterPlugin, MethodCallHandle
       boolean bold = call.argument("bold");
       int size = call.argument("size");
       sunmiPrinter.text(text, align, bold,size);
+      result.success(null);
+    }else if(call.method.equals(EMPTY_LINES)){
+      int n = call.argument("n");
+      sunmiPrinter.emptyLines(n);
       result.success(null);
     }else {
       result.notImplemented();

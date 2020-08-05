@@ -110,4 +110,12 @@ public class Aidl{
           e.printStackTrace();
       }
     }
+
+    public void lineWrap(int line) {
+      try {
+          woyouService.lineWrap(line, null);
+      } catch (RemoteException e) {
+          e.printStackTrace();
+      }
+    }
 }
