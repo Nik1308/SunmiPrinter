@@ -1,3 +1,5 @@
 ## 0.0.1
-
-* TODO: Describe initial release.
+ - Print Text functionality
+ - Print Row functionality
+ - print empty line functionality
+ 
