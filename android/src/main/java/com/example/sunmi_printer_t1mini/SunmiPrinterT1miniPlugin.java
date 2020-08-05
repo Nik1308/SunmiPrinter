@@ -36,7 +36,7 @@ public class SunmiPrinterT1miniPlugin implements FlutterPlugin, MethodCallHandle
   public void onMethodCall(@NonNull MethodCall call, @NonNull Result result) {
     if (call.method.equals(TEXT)){
       String text = call.argument("text");
-      sunmiPrinter.text(text)
+      sunmiPrinter.text(text);
       result.success(null);
     }else {
       result.notImplemented();

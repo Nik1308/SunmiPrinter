@@ -1,4 +1,4 @@
-package com.example.sunmi_printer_t1mini;
+package com.example.sunmi_printer_t1mini.utils;
 
 import android.content.ComponentName;
 import android.content.Context;
@@ -24,15 +24,15 @@ public class Aidl{
     private static final String SERVICE＿ACTION = "woyou.aidlservice.jiuiv5.IWoyouService";
 
     private IWoyouService woyouService;
-    private static AidlUtil mAidlUtil = new AidlUtil();
+    private static Aidl mAidl = new Aidl();
     private static final int LINE_BYTE_SIZE = 32;
     private Context context;
 
-    private AidlUtil() {
+    private Aidl() {
     }
 
-    public static AidlUtil getInstance() {
-        return mAidlUtil;
+    public static Aidl getInstance() {
+        return mAidl;
     }
 
     private ServiceConnection connService = new ServiceConnection() {
@@ -44,6 +44,7 @@ public class Aidl{
       public void onServiceConnected(ComponentName name, IBinder service) {
       woyouService = IWoyouService.Stub.asInterface(service);
     }
+    };
 
     public void binding(Context context){
       this.context = context.getApplicationContext();

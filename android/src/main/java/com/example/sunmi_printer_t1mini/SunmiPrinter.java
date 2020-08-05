@@ -13,12 +13,12 @@ import org.json.JSONObject;
 public class SunmiPrinter{
 
   public void initAidl(Context context) {
-    AidlUtil.getInstance().binding(context);
-    AidlUtil.getInstance().initPrinter();
+    Aidl.getInstance().binding(context);
+    Aidl.getInstance().initPrinter();
   }
 
   public void text(String text){
-    AidlUtil.getInstance().printText(text)
+    Aidl.getInstance().printText(text);
   }
 
 }
