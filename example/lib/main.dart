@@ -25,6 +25,13 @@ class _MyAppState extends State<MyApp> {
     Printer.hr();
     Printer.text("Nikhil");
     Printer.emptyLines(5);
+    Printer.row(
+      cols: [
+        PrintCol(text: 'Contact No.: 0123456789Contact No.: 0123456789', width: 4),
+        PrintCol(text: 'col2', width: 4, align: PrintAlign.center),
+        PrintCol(text: 'col3', width: 4, align: PrintAlign.right),
+      ]
+    );
     Printer.hr();
   }
 

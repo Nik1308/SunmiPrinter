@@ -15,6 +15,7 @@ public class SunmiPrinterT1miniPlugin implements FlutterPlugin, MethodCallHandle
 
   private String TEXT = "printText";
   private String EMPTY_LINES = "emptyLines";
+  private String PRINT_ROW = "printRow";
 
 
   @Override
@@ -46,7 +47,13 @@ public class SunmiPrinterT1miniPlugin implements FlutterPlugin, MethodCallHandle
       int n = call.argument("n");
       sunmiPrinter.emptyLines(n);
       result.success(null);
-    }else {
+    }else if (call.method.equals(PRINT_ROW)) {
+      String cols = call.argument("cols");
+      boolean bold = call.argument("bold");
+      int textSize = call.argument("textSize");
+      sunmiPrinter.row(cols, bold, textSize);
+      result.success(null);
+    } else {
       result.notImplemented();
     }
   }

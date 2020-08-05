@@ -52,7 +52,43 @@ public class SunmiPrinter{
     if (bold) {
       boldOff();
     }
+  }
 
+  public void row(String colsStr, boolean bold,int textSize){
+    try{
+
+      if (bold) {
+        boldOn();
+      }
+
+      JSONArray cols = new JSONArray(colsStr);
+      String[] colsText = new String[cols.length()];
+      int[] colsWidth = new int[cols.length()];
+      int[] colsAlign = new int[cols.length()];
+      for (int i = 0; i < cols.length(); i++) {
+        JSONObject col = cols.getJSONObject(i);
+        String text = col.getString("text");
+        int width = col.getInt("width");
+        int align = col.getInt("align");
+        colsText[i] = text;
+        colsWidth[i] = width;
+        colsAlign[i] = align;
+      }
+
+      // Print row
+      setFontSize(textSize);
+      Aidl.getInstance().printTableItem(colsText, colsWidth, colsAlign);
+
+      setFontSize(DEFAULT_FONT_SIZE);
+
+      // Reset styles
+      if (bold) {
+        boldOff();
+      }
+
+    }catch (Exception err) {
+      Log.d("SunmiPrinter", err.getMessage());
+    }
   }
 
 
