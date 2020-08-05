@@ -14,32 +14,13 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-  String _platformVersion = 'Unknown';
 
-  @override
-  void initState() {
-    super.initState();
-    initPlatformState();
-  }
-
-  // Platform messages are asynchronous, so we initialize in an async method.
-  Future<void> initPlatformState() async {
-    String platformVersion;
-    // Platform messages may fail, so we use a try/catch PlatformException.
-    try {
-      platformVersion = await SunmiPrinterT1mini.platformVersion;
-    } on PlatformException {
-      platformVersion = 'Failed to get platform version.';
-    }
-
-    // If the widget was removed from the tree while the asynchronous platform
-    // message was in flight, we want to discard the reply rather than calling
-    // setState to update our non-existent appearance.
-    if (!mounted) return;
-
-    setState(() {
-      _platformVersion = platformVersion;
-    });
+  void _print() async{
+    Printer.text("package:sunmi_printer_t1mini/sunmi_printer_t1mini.dart");
+    Printer.text("package:sunmi_printer_t1mini/sunmi_printer_t1mini.dart");
+    Printer.text("package:sunmi_printer_t1mini/sunmi_printer_t1mini.dart");
+    Printer.text("package:sunmi_printer_t1mini/sunmi_printer_t1mini.dart");
+    Printer.text("package:sunmi_printer_t1mini/sunmi_printer_t1mini.dart");
   }
 
   @override
@@ -47,10 +28,18 @@ class _MyAppState extends State<MyApp> {
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
-          title: const Text('Plugin example app'),
+          title: const Text('Test Sunmi Printer'),
         ),
-        body: Center(
-          child: Text('Running on: $_platformVersion\n'),
+        body: Column(
+          children: <Widget>[
+            SizedBox(height: 50),
+            Center(
+              child: RaisedButton(
+                onPressed: _print,
+                child: const Text('Print demo', style: TextStyle(fontSize: 20)),
+              ),
+            ),
+          ],
         ),
       ),
     );
