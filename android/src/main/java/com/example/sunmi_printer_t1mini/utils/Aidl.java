@@ -58,11 +58,24 @@ public class Aidl{
       if (woyouService == null) {
           return;
       }
-      
+
       try {
-          woyouService.printerInit(null);
+        woyouService.printerInit(null);
+      } catch (RemoteException e) {
+        e.printStackTrace();
+      }
+    }
+
+
+    public void printText(String text){
+      if (woyouService == null) {
+          return;
+      }
+      try {
+        woyouService.printText(text, null);
       } catch (RemoteException e) {
           e.printStackTrace();
       }
+      
     }
 }

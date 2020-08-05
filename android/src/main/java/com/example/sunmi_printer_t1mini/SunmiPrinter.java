@@ -17,4 +17,8 @@ public class SunmiPrinter{
     AidlUtil.getInstance().initPrinter();
   }
 
+  public void text(String text){
+    AidlUtil.getInstance().printText(text)
+  }
+
 }
