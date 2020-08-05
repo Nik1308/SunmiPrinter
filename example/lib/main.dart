@@ -16,11 +16,10 @@ class MyApp extends StatefulWidget {
 class _MyAppState extends State<MyApp> {
 
   void _print() async{
-    Printer.text("package:sunmi_printer_t1mini/sunmi_printer_t1mini.dart");
-    Printer.text("package:sunmi_printer_t1mini/sunmi_printer_t1mini.dart");
-    Printer.text("package:sunmi_printer_t1mini/sunmi_printer_t1mini.dart");
-    Printer.text("package:sunmi_printer_t1mini/sunmi_printer_t1mini.dart");
-    Printer.text("package:sunmi_printer_t1mini/sunmi_printer_t1mini.dart");
+    Printer.text("Contact No.: 7665651403",styles: PrintStyle(bold: true,align: PrintAlign.center,size: PrintSize.md));
+    Printer.text("nikhil",styles: PrintStyle(align: PrintAlign.left,size: PrintSize.lg));
+    Printer.text("nikhil",styles: PrintStyle(align: PrintAlign.right,size: PrintSize.md));
+    Printer.text("nikhil");
   }
 
   @override

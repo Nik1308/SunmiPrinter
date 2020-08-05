@@ -68,15 +68,46 @@ public class Aidl{
     }
 
 
-    public void printText(String text){
+    public void printText(String text, int align){
       if (woyouService == null) {
           return;
       }
       try {
+        woyouService.setAlignment(align, null);
         woyouService.printText(text, null);
       } catch (RemoteException e) {
           e.printStackTrace();
       }
-      
+    }
+
+    public void printTableItem(String[] text, int[] width, int[] align) {
+      if (woyouService == null) {
+          return;
+      }
+      try {
+          woyouService.printColumnsString(text, width, align, null);
+      } catch (RemoteException e) {
+          e.printStackTrace();
+      }
+    }
+
+    public void sendRawData(byte[] data) {
+      if (woyouService == null) {
+          return;
+      }
+
+      try {
+          woyouService.sendRAWData(data, null);
+      } catch (RemoteException e) {
+          e.printStackTrace();
+      }
+    }
+
+    public void setFontSize(int size) {
+      try {
+          woyouService.setFontSize(size, null);
+      } catch (RemoteException e) {
+          e.printStackTrace();
+      }
     }
 }
