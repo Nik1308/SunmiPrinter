@@ -32,3 +32,7 @@ Printer.row(
 );
 Printer.hr();
 ```
+
+## Thanks For
+<a href="https://pub.dev/packages/flutter_sunmi_printer">flutter_sunmi_printer</a>
+
