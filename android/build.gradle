@@ -16,6 +16,9 @@ rootProject.allprojects {
     repositories {
         google()
         jcenter()
+        flatDir {
+            dirs project(':sunmi_printer_t1mini').file('libs')
+        }
     }
 }
 
@@ -30,4 +33,9 @@ android {
     lintOptions {
         disable 'InvalidPackage'
     }
+}
+
+dependencies{
+    implementation(name: 'payLib', ext: 'aar')
+    compileOnly(name: 'core-3.4.0', ext: 'jar')
 }
