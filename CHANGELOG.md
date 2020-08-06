@@ -9,3 +9,6 @@
   ## 0.0.3
  - Display single string on LCD
  - Display double string on LCD
+
+  ## 0.0.4
+ - Get printer status

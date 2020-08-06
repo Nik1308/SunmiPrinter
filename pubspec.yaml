@@ -1,6 +1,6 @@
 name: sunmi_printer_t1mini
 description: A Flutter plugin for printing bills or LCD text for sunmi devices. It Provides functionalities of getting status of printer, We can style the text for bills. It mainly developed for sunmi devices.
-version: 0.0.3
+version: 0.0.4
 homepage: https://github.com/Nik1308/SunmiPrinter
 
 environment:
