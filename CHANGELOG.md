@@ -5,3 +5,7 @@
  
  ## 0.0.2
  - Thank flutter_sunmi_printer
+
+  ## 0.0.3
+ - Display single string on LCD
+ - Display double string on LCD

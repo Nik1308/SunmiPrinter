@@ -14,6 +14,13 @@ SUNMI T1 MINI
 ```dart
 import 'package:sunmi_printer_t1mini/sunmi_printer_t1mini.dart';
 
+"For Displaying Single Text on LCD" - 
+Printer.showLCDtext("Test");
+
+"For Displaying Double Text on LCD" - 
+Printer.showDoubleLCDtext("Welcome","test2");
+
+"For Printing" - 
 Printer.text("Contact No.: 0123456789",styles: PrintStyle(bold: true,align: PrintAlign.center,size: PrintSize.md));
 Printer.emptyLines(3);
 Printer.hr();
