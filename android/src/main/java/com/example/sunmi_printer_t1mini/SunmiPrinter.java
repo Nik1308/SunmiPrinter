@@ -91,5 +91,13 @@ public class SunmiPrinter{
     }
   }
 
+  public void displayText(String text){
+    Aidl.getInstance().sendLCDString(text);
+  }
+
+  public void displayDoubleText(String upperText,String bottomText){
+    Aidl.getInstance().sendLCDDoubleString(upperText,bottomText);
+  }
+
 
 }

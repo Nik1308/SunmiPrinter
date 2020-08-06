@@ -118,4 +118,20 @@ public class Aidl{
           e.printStackTrace();
       }
     }
+
+    public void sendLCDString(String text){
+      try {
+          woyouService.sendLCDString(text, null);
+      } catch (RemoteException e) {
+          e.printStackTrace();
+      }
+    }
+
+    public void sendLCDDoubleString(String upperText,String bottomText){
+      try {
+          woyouService.sendLCDDoubleString(upperText,bottomText, null);
+      } catch (RemoteException e) {
+          e.printStackTrace();
+      }
+    }
 }

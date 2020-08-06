@@ -10,9 +10,30 @@ class Printer{
   static const String PRINT_TEXT = "printText";
   static const String EMPTY_LINES = "emptyLines";
   static const String PRINT_ROW = "printRow";
+  static const String LCD_STRING = "showLCD";
+  static const String LCD_DOUBLE_STRING = "showDoubleLCD";
+
 
   static const MethodChannel _channel =
     const MethodChannel('sunmi_printer_t1mini');
+
+  static Future<void> showLCDtext(
+    String text
+    ) async {
+    await _channel.invokeMethod(LCD_STRING, {
+      "text": text,
+    });
+  }
+
+  static Future<void> showDoubleLCDtext(
+    String upperText,
+    String bottomText,
+    ) async {
+    await _channel.invokeMethod(LCD_DOUBLE_STRING, {
+      "upperText": upperText,
+      "bottomText": bottomText
+    });
+  }
 
   static Future<void> text(
     String text,{

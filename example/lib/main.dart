@@ -16,6 +16,7 @@ class MyApp extends StatefulWidget {
 class _MyAppState extends State<MyApp> {
 
   void _print() async{
+    Printer.showDoubleLCDtext("Welcome to Gullymart","Tongya");
     Printer.text("Contact No.: 0123456789",styles: PrintStyle(bold: true,align: PrintAlign.center,size: PrintSize.md));
     Printer.emptyLines(3);
     Printer.hr();

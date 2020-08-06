@@ -16,7 +16,8 @@ public class SunmiPrinterT1miniPlugin implements FlutterPlugin, MethodCallHandle
   private String TEXT = "printText";
   private String EMPTY_LINES = "emptyLines";
   private String PRINT_ROW = "printRow";
-
+  private String LCD_STRING = "showLCD";
+  private String LCD_DOUBLE_STRING = "showDoubleLCD";
 
   @Override
   public void onAttachedToEngine(@NonNull FlutterPluginBinding flutterPluginBinding) {
@@ -53,7 +54,16 @@ public class SunmiPrinterT1miniPlugin implements FlutterPlugin, MethodCallHandle
       int textSize = call.argument("textSize");
       sunmiPrinter.row(cols, bold, textSize);
       result.success(null);
-    } else {
+    } else if (call.method.equals(LCD_STRING)) {
+      String text = call.argument("text");
+      sunmiPrinter.displayText(text);
+      result.success(null);
+    }else if (call.method.equals(LCD_DOUBLE_STRING)) {
+      String upperText = call.argument("upperText");
+      String bottomText = call.argument("bottomText");
+      sunmiPrinter.displayDoubleText(upperText,bottomText);
+      result.success(null);
+    }else {
       result.notImplemented();
     }
   }
