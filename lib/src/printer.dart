@@ -12,10 +12,20 @@ class Printer{
   static const String PRINT_ROW = "printRow";
   static const String LCD_STRING = "showLCD";
   static const String LCD_DOUBLE_STRING = "showDoubleLCD";
-
+  static const String PRINTER_STATUS = "printerStatus";
 
   static const MethodChannel _channel =
     const MethodChannel('sunmi_printer_t1mini');
+
+  static Future<int> getPrinterStatus(
+    ) async {
+     var returnVal;
+    await _channel.invokeMethod(PRINTER_STATUS, {
+    }).then((value) => {
+      returnVal = value
+    }) ;
+    return returnVal;
+  }
 
   static Future<void> showLCDtext(
     String text

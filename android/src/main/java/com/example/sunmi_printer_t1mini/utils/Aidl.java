@@ -134,4 +134,15 @@ public class Aidl{
           e.printStackTrace();
       }
     }
+
+    public int updatePrinterState(){
+      try{
+        int state =  woyouService.updatePrinterState();
+        return state;
+      } catch (RemoteException e) {
+          
+          e.printStackTrace();
+          return 2000;
+      }
+    }
 }

@@ -8,6 +8,7 @@ import io.flutter.plugin.common.MethodChannel;
 import io.flutter.plugin.common.MethodChannel.MethodCallHandler;
 import io.flutter.plugin.common.MethodChannel.Result;
 import io.flutter.plugin.common.PluginRegistry.Registrar;
+import com.example.sunmi_printer_t1mini.utils.Aidl;
 
 public class SunmiPrinterT1miniPlugin implements FlutterPlugin, MethodCallHandler {
   private MethodChannel channel;
@@ -18,6 +19,7 @@ public class SunmiPrinterT1miniPlugin implements FlutterPlugin, MethodCallHandle
   private String PRINT_ROW = "printRow";
   private String LCD_STRING = "showLCD";
   private String LCD_DOUBLE_STRING = "showDoubleLCD";
+  private String PRINTER_STATUS = "printerStatus";
 
   @Override
   public void onAttachedToEngine(@NonNull FlutterPluginBinding flutterPluginBinding) {
@@ -63,6 +65,9 @@ public class SunmiPrinterT1miniPlugin implements FlutterPlugin, MethodCallHandle
       String bottomText = call.argument("bottomText");
       sunmiPrinter.displayDoubleText(upperText,bottomText);
       result.success(null);
+    }else if (call.method.equals(PRINTER_STATUS)) {
+      int printerState = Aidl.getInstance().updatePrinterState();
+      result.success(printerState);
     }else {
       result.notImplemented();
     }
