@@ -12,3 +12,6 @@
 
   ## 0.0.4
  - Get printer status
+
+   ## 0.0.5
+ - Update readme

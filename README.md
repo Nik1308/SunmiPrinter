@@ -9,27 +9,27 @@ SUNMI T1 MINI
 
 ## Supported Features
 
-1 → Print text
-2 → Print rows
-3 → Print empty lines
-4 → Print dash line
-5 → Display single text on LCD
-6 → Display multiple text on LCD
-7 → Get printer status
+-   Print text
+-   Print rows
+-   Print empty lines
+-   Print dash line
+-   Display single text on LCD
+-   Display multiple text on LCD
+-   Get printer status
 
 ## Printer Status
 
-1 → The printer works normally
-2 → Preparing printer
-3 → Abnormal communication
-4 → Out of paper
-5 → Overheated
-6 →Open the lid
-7 → The paper cutter is abnormal
-8 → The paper cutter has been recovered
-9 → No black mark has been detected
-505 →No printer has been detected
-507 →Failed to upgrade the printer firmware
+-  1 → The printer works normally
+-  2 → Preparing printer
+-  3 → Abnormal communication
+-  4 → Out of paper
+-  5 → Overheated
+-  6 →Open the lid
+-  7 → The paper cutter is abnormal
+-  8 → The paper cutter has been recovered
+-  9 → No black mark has been detected
+-  505 →No printer has been detected
+-  507 →Failed to upgrade the printer firmware
 
 ## How to use 
 
