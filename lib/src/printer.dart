@@ -13,6 +13,7 @@ class Printer{
   static const String LCD_STRING = "showLCD";
   static const String LCD_DOUBLE_STRING = "showDoubleLCD";
   static const String PRINTER_STATUS = "printerStatus";
+  static const String PRINT_IMAGE = "printImage";
 
   static const MethodChannel _channel =
     const MethodChannel('sunmi_printer_t1mini');
@@ -89,6 +90,16 @@ class Printer{
       "cols": json.encode(colsJson),
       "bold": bold,
       "textSize": textSize.value,
+    });
+  }
+
+  static Future<void> image(
+    String base64, {
+    PrintAlign align: PrintAlign.center,
+  }) async {
+    await _channel.invokeMethod(PRINT_IMAGE, {
+      "base64": base64,
+      "align": align.value,
     });
   }
 }

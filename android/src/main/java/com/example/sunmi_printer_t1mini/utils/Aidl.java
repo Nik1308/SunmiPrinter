@@ -145,4 +145,18 @@ public class Aidl{
           return 2000;
       }
     }
+
+    public void printBitmap(Bitmap bitmap, int align) {
+      if (woyouService == null) {
+          return;
+      }
+
+      try {
+          woyouService.setAlignment(align, null);
+          woyouService.printBitmap(bitmap, null);
+          woyouService.lineWrap(1, null);
+      } catch (RemoteException e) {
+          e.printStackTrace();
+      }
+    }
 }

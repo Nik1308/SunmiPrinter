@@ -1,6 +1,6 @@
 name: sunmi_printer_t1mini
 description: A Flutter plugin for printing bills.
-version: 0.0.5
+version: 0.0.6
 homepage: https://github.com/Nik1308/SunmiPrinter
 
 environment:

@@ -15,3 +15,6 @@
 
    ## 0.0.5
  - Update readme
+
+  ## 0.0.5
+ - Image support

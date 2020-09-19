@@ -16,6 +16,7 @@ SUNMI T1 MINI
 -   Display single text on LCD
 -   Display multiple text on LCD
 -   Get printer status
+-   Print Image
 
 ## Printer Status
 

@@ -20,6 +20,7 @@ public class SunmiPrinterT1miniPlugin implements FlutterPlugin, MethodCallHandle
   private String LCD_STRING = "showLCD";
   private String LCD_DOUBLE_STRING = "showDoubleLCD";
   private String PRINTER_STATUS = "printerStatus";
+  private String PRINT_IMAGE = "printImage";
 
   @Override
   public void onAttachedToEngine(@NonNull FlutterPluginBinding flutterPluginBinding) {
@@ -68,6 +69,11 @@ public class SunmiPrinterT1miniPlugin implements FlutterPlugin, MethodCallHandle
     }else if (call.method.equals(PRINTER_STATUS)) {
       int printerState = Aidl.getInstance().updatePrinterState();
       result.success(printerState);
+    }else if (call.method.equals(PRINT_IMAGE)) {
+      String base64 = call.argument("base64");
+      int align = call.argument("align");
+      sunmiPrinter.printImage(base64, align);
+      result.success(null);
     }else {
       result.notImplemented();
     }
