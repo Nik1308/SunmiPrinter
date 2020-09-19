@@ -13,8 +13,11 @@
   ## 0.0.4
  - Get printer status
 
-   ## 0.0.5
+  ## 0.0.5
  - Update readme
 
-  ## 0.0.5
+  ## 0.0.6
  - Image support
+
+  ## 0.0.7
+ - Bug fixes in Image support

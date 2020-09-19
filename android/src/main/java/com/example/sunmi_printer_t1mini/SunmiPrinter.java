@@ -5,6 +5,8 @@ import android.util.Log;
 
 import com.example.sunmi_printer_t1mini.utils.Aidl;
 import com.example.sunmi_printer_t1mini.utils.ESCUtil;
+import com.tablemi.flutter_sunmi_printer.utils.Base64Utils;
+import com.tablemi.flutter_sunmi_printer.utils.BitmapUtil;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -107,7 +109,7 @@ public class SunmiPrinter{
         bytes[i] += 256;
       }
     }
-    AidlUtil.getInstance().printBitmap(BitmapUtil.convertToThumb(bytes, 280), align);
+    Aidl.getInstance().printBitmap(BitmapUtil.convertToThumb(bytes, 280), align);
     // AidlUtil.getInstance().lineWrap(1);
   }
 
