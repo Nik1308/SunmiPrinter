@@ -171,4 +171,16 @@ public class Aidl{
           e.printStackTrace();
       }
     }
+
+    public void printQRCode(String data, int modulesize, int errorlevel){
+      if (woyouService == null) {
+        return;
+    }
+
+    try {
+        woyouService.printQRCode(data, modulesize, errorlevel, null);
+    } catch (RemoteException e) {
+        e.printStackTrace();
+    }
+    }
 }

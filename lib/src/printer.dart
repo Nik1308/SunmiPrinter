@@ -15,6 +15,7 @@ class Printer{
   static const String PRINTER_STATUS = "printerStatus";
   static const String PRINT_IMAGE = "printImage";
   static const String CUT_PAPER = "cutPaper";
+  static const String PRINT_QR = "printQR";
 
   static const MethodChannel _channel =
     const MethodChannel('sunmi_printer_t1mini');
@@ -107,5 +108,15 @@ class Printer{
   static Future<void> cutPaper() async {
     await _channel.invokeMethod(CUT_PAPER);
   }
+
+  static Future<void> printQRcode(String data, int moduleSize, int errorLevel) async {
+    await _channel.invokeMethod(PRINT_QR, {
+      "data": data,
+      "modulesize":moduleSize,
+      "errorlevel":errorLevel
+    });
+  }
+
+
 
 }
