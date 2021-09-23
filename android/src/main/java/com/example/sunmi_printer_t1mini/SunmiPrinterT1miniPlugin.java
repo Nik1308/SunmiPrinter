@@ -22,6 +22,7 @@ public class SunmiPrinterT1miniPlugin implements FlutterPlugin, MethodCallHandle
   private String PRINTER_STATUS = "printerStatus";
   private String PRINT_IMAGE = "printImage";
   private String CUT_PAPER = "cutPaper";
+  private String PRINT_QR = "printQR";
 
   @Override
   public void onAttachedToEngine(@NonNull FlutterPluginBinding flutterPluginBinding) {
@@ -74,6 +75,12 @@ public class SunmiPrinterT1miniPlugin implements FlutterPlugin, MethodCallHandle
       String base64 = call.argument("base64");
       int align = call.argument("align");
       sunmiPrinter.printImage(base64, align);
+    }else if(call.method.equals(PRINT_QR)){
+      String data = call.argument("data");
+      int modulesize = call.argument("modulesize"); 
+      int errorlevel = call.argument("errorlevel");
+      sunmiPrinter.printQRCode(data, modulesize, errorlevel);
+      result.success(null);
     } else if(call.method.equals(CUT_PAPER)){
       sunmiPrinter.cutPaper();
       result.success(null);
