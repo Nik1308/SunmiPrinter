@@ -67,6 +67,18 @@ public class Aidl{
       }
     }
 
+    public void cutPaper(){
+      if (woyouService == null) {
+        return;
+      }
+
+      try {
+        woyouService.cutPaper(null);
+      } catch (RemoteException e) {
+        e.printStackTrace();
+      }
+    }
+
 
     public void printText(String text, int align){
       if (woyouService == null) {
