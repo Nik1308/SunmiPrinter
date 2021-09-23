@@ -21,6 +21,7 @@ public class SunmiPrinterT1miniPlugin implements FlutterPlugin, MethodCallHandle
   private String LCD_DOUBLE_STRING = "showDoubleLCD";
   private String PRINTER_STATUS = "printerStatus";
   private String PRINT_IMAGE = "printImage";
+  private String CUT_PAPER = "cutPaper";
 
   @Override
   public void onAttachedToEngine(@NonNull FlutterPluginBinding flutterPluginBinding) {
@@ -74,6 +75,8 @@ public class SunmiPrinterT1miniPlugin implements FlutterPlugin, MethodCallHandle
       int align = call.argument("align");
       sunmiPrinter.printImage(base64, align);
       result.success(null);
+    } else if(call.method.equals(CUT_PAPER)){
+      sunmiPrinter.cutPaper();
     }else {
       result.notImplemented();
     }

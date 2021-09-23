@@ -14,6 +14,7 @@ class Printer{
   static const String LCD_DOUBLE_STRING = "showDoubleLCD";
   static const String PRINTER_STATUS = "printerStatus";
   static const String PRINT_IMAGE = "printImage";
+  static const String CUT_PAPER = "cutPaper";
 
   static const MethodChannel _channel =
     const MethodChannel('sunmi_printer_t1mini');
@@ -102,4 +103,9 @@ class Printer{
       "align": align.value,
     });
   }
+
+  static Future<void> cutPaper() async {
+    await _channel.invokeMethod(CUT_PAPER);
+  }
+
 }
