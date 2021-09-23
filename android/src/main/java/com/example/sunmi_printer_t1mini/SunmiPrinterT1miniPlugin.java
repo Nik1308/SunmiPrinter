@@ -74,9 +74,9 @@ public class SunmiPrinterT1miniPlugin implements FlutterPlugin, MethodCallHandle
       String base64 = call.argument("base64");
       int align = call.argument("align");
       sunmiPrinter.printImage(base64, align);
-      result.success(null);
     } else if(call.method.equals(CUT_PAPER)){
       sunmiPrinter.cutPaper();
+      result.success(null);
     }else {
       result.notImplemented();
     }
