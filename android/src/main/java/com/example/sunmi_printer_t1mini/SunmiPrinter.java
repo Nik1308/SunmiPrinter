@@ -93,7 +93,7 @@ public class SunmiPrinter{
     }
   }
 
-  public void cutPapers(){Aidl.getInstance().cutPaper();}
+  public void cutPaper(){Aidl.getInstance().cutPaper();}
 
   public void displayText(String text){
     Aidl.getInstance().sendLCDString(text);
